@@ -1,8 +1,11 @@
 import React from 'react';
 
+import store from '../store';
+
 const ArtistListing = React.createClass({
   vote: function(e) {
     console.log(e.target.id);
+    store.votedForCollection.create();
   },
   render: function() {
     let image;
