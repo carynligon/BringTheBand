@@ -1,6 +1,7 @@
 import React from 'react';
 
 import store from '../store';
+import Nav from './Nav';
 import VotedForBandListing from './VotedForBandListing';
 
 const VotedForPage = React.createClass({
@@ -24,6 +25,7 @@ const VotedForPage = React.createClass({
     let bands = this.getBands();
     return (
       <section>
+        <Nav/>
         <ul id="voted-for-list">
           {bands}
         </ul>

@@ -15,6 +15,10 @@ const Login = React.createClass({
         window.localStorage.setItem('authtoken', response._kmd.authtoken);
         window.localStorage.setItem('username', response.username);
         model.unset('password');
+        store.session.set({
+          username: username,
+          password: password
+        })
       },
       error: function(response) {
         document.getElementById('username').style.color = '#f32424';

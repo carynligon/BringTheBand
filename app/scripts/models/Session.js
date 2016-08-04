@@ -1,6 +1,8 @@
 import Backbone from 'backbone';
+import {hashHistory} from 'react-router';
 
 import settings from '../settings';
+import store from '../store';
 
 const Session = Backbone.Model.extend({
   urlRoot: `https://baas.kinvey.com/user/${settings.appKey}/login`,
@@ -21,6 +23,11 @@ const Session = Backbone.Model.extend({
       this.fetch({
           url: `https://baas.kinvey.com/user/${settings.appKey}/_me`
       });
+  },
+  logout: function() {
+    this.save(null, `https://baas.kinvey.com/user/${settings.appKey}/_logout`);
+    localStorage.clear();
+    hashHistory.push('/login');
   }
 })
 

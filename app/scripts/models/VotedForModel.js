@@ -9,11 +9,15 @@ const VotedForModel = Backbone.Model.extend({
     votes: 1,
   },
   newVote: function() {
-    this.get('voters').user = this.get('voters').user.concat('new user');
-    this.set({
-      votes: this.get('votes') + 1
-    });
-    this.save();
+    if (this.get('voters').user.indexOf(localStorage.username) === -1) {
+      this.get('voters').user = this.get('voters').user.concat(localStorage.username);
+      this.set({
+        votes: this.get('votes') + 1
+      });
+      this.save();
+    } else {
+      console.log('already voted');
+    }
   },
 });
 

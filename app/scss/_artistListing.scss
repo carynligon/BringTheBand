@@ -24,12 +24,20 @@
     }
     button {
       display: block;
-      background: darken($primary-color, 5%);
+      background: $primary-color;
       color: $white;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
       padding: 10px;
+      &:hover, &:focus {
+        background: darken($primary-color, 20%);
+        outline: 0;
+        border: none;
+        transform: scale(1.1);
+        transition: background .7s ease-in-out;
+        transition: transform .7s ease-in-out;
+      }
     }
   }
 }
