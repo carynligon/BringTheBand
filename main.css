@@ -23,12 +23,19 @@
       text-overflow: ellipsis; }
     #search-results-list li button {
       display: block;
-      background: #9f2fe7;
+      background: #aa46ea;
       color: #fff;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
       padding: 10px; }
+      #search-results-list li button:hover, #search-results-list li button:focus {
+        background: #7715b5;
+        outline: 0;
+        border: none;
+        transform: scale(1.1);
+        transition: background .7s ease-in-out;
+        transition: transform .7s ease-in-out; }
 
 header {
   background: #aa46ea;
