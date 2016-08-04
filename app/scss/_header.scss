@@ -1,0 +1,49 @@
+header {
+  background: $primary-color;
+  padding: 120px 20px 150px 20px;
+  h1 {
+    margin: 0;
+    color: $white;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 300;
+  }
+}
+
+.search-form {
+  text-align: center;
+  #search-input {
+    width: 75%;
+    font-size: 1.5rem;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    line-height: 2rem;
+    background: darken($primary-color, 5%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 5px 10px 15px;
+    color: $white;
+    &::-webkit-input-placeholder {
+      color: $white;
+    }
+    &:focus, &:hover {
+      background: darken($primary-color, 20%);
+      transition: background .7s;
+    }
+  }
+  #submit-search {
+    width: 75px;
+    background: none;
+    border: none;
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 12px 0px;
+    margin-left: 10px;
+    &:hover {
+      background: darken($primary-color, 20%);
+      border-radius: 10px;
+      transition: background .7s;
+    }
+  }
+}

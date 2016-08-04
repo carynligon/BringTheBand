@@ -12,7 +12,7 @@ const Search = React.createClass({
     return (
       <form className="search-form" onSubmit={this.getSearch}>
         <input type="text" name="search-input" id="search-input" placeholder="Search for any artist" ref="search"/>
-        <input type="submit" name="submit-search" id="submit-search" value="Search"/>
+        <input type="submit" name="submit-search" id="submit-search" value="Go"/>
       </form>
     );
   }

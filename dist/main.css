@@ -1,7 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400);
 .artist-image {
+  float: left;
   height: 150px;
   width: 150px;
+  margin-right: 15px;
   background-size: cover;
   background-repeat: no-repeat; }
+
+#search-results-list {
+  width: 70%;
+  margin: 0 auto; }
+  #search-results-list li {
+    height: 150px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6; }
+    #search-results-list li h3 {
+      margin-bottom: 10px;
+      padding-top: 30px;
+      font-size: 2.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    #search-results-list li button {
+      display: block;
+      background: #9f2fe7;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      padding: 10px; }
+
+header {
+  background: #aa46ea;
+  padding: 120px 20px 150px 20px; }
+  header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 300; }
+
+.search-form {
+  text-align: center; }
+  .search-form #search-input {
+    width: 75%;
+    font-size: 1.5rem;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    line-height: 2rem;
+    background: #9f2fe7;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 5px 10px 15px;
+    color: #fff; }
+    .search-form #search-input::-webkit-input-placeholder {
+      color: #fff; }
+    .search-form #search-input:focus, .search-form #search-input:hover {
+      background: #7715b5;
+      transition: background .7s; }
+  .search-form #submit-search {
+    width: 75px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 12px 0px;
+    margin-left: 10px; }
+    .search-form #submit-search:hover {
+      background: #7715b5;
+      border-radius: 10px;
+      transition: background .7s; }
+
+body {
+  margin: 0;
+  font-family: "Josefin Sans", Avenir, sans-serif;
+  color: #333333; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    list-style-type: none; }
+
+input:hover, input:focus {
+  outline: none;
+  border: 2px solid red; }
 
 /*# sourceMappingURL=main.css.map */

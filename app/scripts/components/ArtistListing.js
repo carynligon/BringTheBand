@@ -21,6 +21,7 @@ const ArtistListing = React.createClass({
       store.votedForCollection.create({
         name: this.props.name,
         id: this.props.id,
+        image: this.props.image,
         voters: {
           user: [localStorage.username]
         }
