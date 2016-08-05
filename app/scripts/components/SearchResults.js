@@ -8,10 +8,14 @@ const SearchResults = React.createClass({
   getInitialState: function() {
     return {};
   },
+  listener: function () {
+    this.setState(store.searchCollection.toJSON());
+  },
   componentDidMount: function() {
-    store.searchCollection.on('add', () => {
-      this.setState(store.searchCollection.toJSON());
-    });
+    store.searchCollection.on('add', this.listener);
+  },
+  componentWillUnMount: function() {
+    store.searchCollection.off('add', this.listener);
   },
   render: function() {
     let artistArr;

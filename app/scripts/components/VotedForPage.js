@@ -15,6 +15,9 @@ const VotedForPage = React.createClass({
     store.votedForCollection.on('change add', this.listener);
     store.votedForCollection.fetch();
   },
+  componentWillUnMount: function() {
+    store.votedForCollection.off('change add', this.listener);
+  },
   getBands: function() {
     let bands = this.state.data.map((band, i) => {
     return <VotedForBandListing key={i} name={band.name} id={band.id} image={band.image} voters={band.voters} votes={band.votes}/>

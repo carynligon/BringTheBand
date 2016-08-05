@@ -6,14 +6,14 @@ import store from '../store';
 const Nav = React.createClass({
   getInitialState: function() {
     return {
-      loggedIn: false
+      loggedIn: store.session.get('authtoken') ? true : false
     }
   },
   logout: function() {
     store.session.logout();
   },
   listener: function() {
-    if (store.session.get('username')) {
+    if (store.session.get('authtoken')) {
       this.setState({
         loggedIn: true
       });
@@ -25,10 +25,9 @@ const Nav = React.createClass({
   },
   componentDidMount: function() {
     store.session.on('change', this.listener);
-    this.listener();
   },
-  componentWillUnMount: function() {
-    store.session.off('change', this.listener)
+  componentWillUnmount: function() {
+    store.session.off('change add update', this.listener)
   },
   render: function() {
     let links;
