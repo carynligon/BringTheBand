@@ -1,11 +1,4 @@
-.artist-image {
-  float: left;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-}
-
-#search-results-list {
+#voted-for-list {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -27,14 +20,16 @@
       text-overflow: ellipsis;
       text-align: center;
       position: relative;
-      top: 156px;
+      top: 54px;
       background: rgba(170,70,234,0.8);
       color: $white;
     }
     button {
       position: relative;
-      bottom: 72px;
-      left: 89%;
+      bottom: 186px;
+      left: 82%;
+      width: 30px;
+      display: block;
       background: rgba(170,70,234,0.8);
       color: $white;
       border: none;

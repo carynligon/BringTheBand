@@ -15,7 +15,7 @@ const VotedForPage = React.createClass({
     store.votedForCollection.on('change add', this.listener);
     store.votedForCollection.fetch();
   },
-  componentWillUnMount: function() {
+  componentWillUnmount: function() {
     store.votedForCollection.off('change add', this.listener);
   },
   getBands: function() {
