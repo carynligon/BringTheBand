@@ -1,0 +1,32 @@
+.login-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, darken($primary-color, 3%), lighten($primary-color, 17%));
+}
+.login-form {
+  background: none;
+  border: 1px solid $white;
+  width: 400px;
+  margin: 10% auto;
+  text-align: center;
+  padding-bottom: 30px;
+  input {
+    padding: 10px 5px;
+    width: 300px;
+    border: none;
+    margin: 5px;
+    background: $white;
+    color: $primary-color;
+    &:hover, &:focus {
+      border: 2px solid darken($primary-color, 5%);
+    }
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: $white;
+  }
+}

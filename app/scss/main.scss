@@ -3,6 +3,7 @@
 @import 'VotedForPage';
 @import 'header';
 @import 'nav';
+@import 'login';
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400);
 
 body {
@@ -21,6 +22,7 @@ ul {
 
 input {
   &:hover, &:focus {
+    cursor: pointer;
     outline: none;
     border: 2px solid red;
   }

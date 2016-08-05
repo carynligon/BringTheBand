@@ -18,4 +18,14 @@ nav {
     display: inline-block;
     float: right;
   }
+  #logout-btn {
+    color: $white;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    &:hover, &:focus {
+      background: $primary-color;
+    }
+  }
 }

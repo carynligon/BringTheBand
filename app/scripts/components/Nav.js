@@ -6,7 +6,7 @@ import store from '../store';
 const Nav = React.createClass({
   getInitialState: function() {
     return {
-      loggedIn: store.session.get('authtoken') ? true : false
+      loggedIn: localStorage.authtoken ? true : false
     }
   },
   logout: function() {

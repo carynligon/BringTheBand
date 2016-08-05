@@ -14,7 +14,7 @@ const SearchResults = React.createClass({
   componentDidMount: function() {
     store.searchCollection.on('add', this.listener);
   },
-  componentWillUnMount: function() {
+  componentWillUnmount: function() {
     store.searchCollection.off('add', this.listener);
   },
   render: function() {

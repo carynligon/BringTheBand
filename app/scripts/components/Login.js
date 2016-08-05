@@ -33,12 +33,15 @@ const Login = React.createClass({
   },
   render: function() {
     return (
-      <form className="login-form" onSubmit={this.loginUser}>
-        <input id="username" type="text" name="username" placeholder="username" ref="username"/>
-        <input id="password" type="password" name="password" placeholder="password" ref="password"/>
-        <p id="error-message"></p>
-        <input type="submit" name="submit" value="submit"/>
-      </form>
+      <div className="login-wrapper">
+        <form className="login-form" onSubmit={this.loginUser}>
+          <h2>Login</h2>
+          <input id="username" type="text" name="username" placeholder="username" ref="username"/>
+          <input id="password" type="password" name="password" placeholder="password" ref="password"/>
+          <p id="error-message"></p>
+          <input type="submit" name="submit" value="submit"/>
+        </form>
+      </div>
     );
   }
 });
