@@ -34,11 +34,10 @@ const ArtistListing = React.createClass({
   },
   render: function() {
     let votes;
-    let voteLabel = 'votes';
     if (store.votedForCollection.get(this.props.id)) {
       let votedFor = store.votedForCollection.get(this.props.id);
       votes = votedFor.get('votes');
-      if (votes === 1) {voteLabel = 'vote'}} else {votes = 0;}
+      } else {votes = 0;}
     let image;
     if (!this.props.image[0]) {
       image = 'http://i607.photobucket.com/albums/tt160/SaikoSakura/Beatles%20Rock%20Band%20Icons/Drums-TBRB-Icon.png';
@@ -51,9 +50,9 @@ const ArtistListing = React.createClass({
     return (
       <li>
         <div className="artist-image" style={styles}>
+          <h3>{this.props.name}</h3>
+          <button name="vote" id={this.props.id} onClick={this.vote}>{votes}</button>
         </div>
-        <h3>{this.props.name}</h3>
-        <button name="vote" id={this.props.id} onClick={this.vote}>{votes} {voteLabel}</button>
       </li>
     );
   }

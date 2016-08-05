@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import React from 'react';
+import {hashHistory} from 'react-router';
+
 import store from '../store';
 
 const Login = React.createClass({
@@ -19,6 +21,7 @@ const Login = React.createClass({
           username: username,
           password: password
         })
+        hashHistory.push('/');
       },
       error: function(response) {
         document.getElementById('username').style.color = '#f32424';

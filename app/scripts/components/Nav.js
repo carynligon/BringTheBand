@@ -5,14 +5,8 @@ import store from '../store';
 
 const Nav = React.createClass({
   getInitialState: function() {
-    let loggedIn;
-    if (store.session.get('username')) {
-      loggedIn = true;
-    } else {
-      loggedIn = true;
-    }
     return {
-      loggedIn: loggedIn
+      loggedIn: false
     }
   },
   logout: function() {
@@ -31,6 +25,7 @@ const Nav = React.createClass({
   },
   componentDidMount: function() {
     store.session.on('change', this.listener);
+    this.listener();
   },
   componentWillUnMount: function() {
     store.session.off('change', this.listener)
@@ -54,7 +49,7 @@ const Nav = React.createClass({
     console.log(this.state);
     return (
       <nav>
-        <Link to='/'>Home</Link>
+        <Link to='/'><i className="fa fa-home home-icon" aria-hidden="true"/>Home</Link>
         <Link to='/votedFor'>Votes</Link>
         {links}
       </nav>

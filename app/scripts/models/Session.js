@@ -25,9 +25,9 @@ const Session = Backbone.Model.extend({
       });
   },
   logout: function() {
-    this.save(null, `https://baas.kinvey.com/user/${settings.appKey}/_logout`);
+    this.clear();
     localStorage.clear();
-    hashHistory.push('/login');
+    hashHistory.push('/');
   }
 })
 

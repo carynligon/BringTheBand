@@ -1,0 +1,21 @@
+nav {
+  background: darken($primary-color, 5%);
+  padding: 20px 10px;
+  a {
+    color: $white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    i {
+      margin-right: 5px;
+    }
+    &:hover, &:focus {
+      background: $primary-color;
+    }
+  }
+  .changing-links {
+    display: inline-block;
+    float: right;
+  }
+}
