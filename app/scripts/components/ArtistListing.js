@@ -1,6 +1,8 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import store from '../store';
+import Modal from './Modal';
 
 const ArtistListing = React.createClass({
   getInitialState: function() {
@@ -32,6 +34,9 @@ const ArtistListing = React.createClass({
       model.newVote();
     }
   },
+  showModal: function(e) {
+    hashHistory.push(`/${this.props.id}`)
+  },
   render: function() {
     let votes;
     if (store.votedForCollection.get(this.props.id)) {
@@ -50,7 +55,7 @@ const ArtistListing = React.createClass({
     return (
       <li>
         <div className="artist-image" style={styles}></div>
-        <div className="artist-image-overlay" style={styles}></div>
+        <div className="artist-image-overlay" style={styles} onClick={this.showModal}></div>
         <h3>{this.props.name}</h3>
         <button name="vote" id={this.props.id} onClick={this.vote}>{votes}</button>
       </li>
