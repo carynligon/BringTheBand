@@ -1,15 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400);
 .artist-image {
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
   opacity: 0.5; }
 
 .artist-image-overlay {
   position: relative;
-  bottom: 194px;
-  width: 170px;
-  height: 170px;
+  bottom: 260px;
+  width: 240px;
+  height: 240px;
   margin: 0 auto;
   border-radius: 50%;
   background-size: cover; }
@@ -32,40 +32,44 @@
   margin: 0 auto;
   text-align: center; }
   #search-results-list li {
-    display: inline-block;
+    float: left;
     height: 260px;
-    width: 260px;
-    padding: 20px;
-    box-sizing: border-box; }
-    #search-results-list li h3 {
-      margin-bottom: 10px;
-      font-size: 1.5rem;
-      padding: 8px 5px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: center;
-      position: relative;
-      bottom: 195px;
-      background: rgba(170, 70, 234, 0.8);
-      color: #fff; }
-    #search-results-list li button {
-      position: relative;
-      bottom: 287px;
-      left: 90px;
-      background: rgba(170, 70, 234, 0.8);
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    margin: 30px 10px 10px 10px;
+    background: rgba(245, 242, 246, 0.8); }
+    #search-results-list li:hover .artist-image-overlay {
+      opacity: 0.5; }
+  #search-results-list h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    padding: 8px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    position: relative;
+    bottom: 283px;
+    background: #c9c8c9;
+    color: #2D3047; }
+  #search-results-list button {
+    position: relative;
+    bottom: 565px;
+    left: 100px;
+    background: rgba(209, 209, 209, 0.8);
+    color: #aa46ea;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 3px 8px; }
+    #search-results-list button:hover, #search-results-list button:focus {
+      background: #7715b5;
       color: #fff;
+      outline: 0;
       border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      padding: 10px; }
-      #search-results-list li button:hover, #search-results-list li button:focus {
-        background: #7715b5;
-        outline: 0;
-        border: none;
-        transform: scale(1.1);
-        transition: background .7s ease-in-out;
-        transition: transform .7s ease-in-out; }
+      transform: scale(1.1);
+      transition: background .7s ease-in-out;
+      transition: transform .7s ease-in-out; }
 
 #voted-for-list {
   width: 80%;
