@@ -1,5 +1,5 @@
 .artist-image {
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
   opacity: 0.5;
@@ -7,9 +7,9 @@
 
 .artist-image-overlay {
   position: relative;
-  bottom: 194px;
-  width: 170px;
-  height: 170px;
+  bottom: 260px;
+  width: 240px;
+  height: 240px;
   margin: 0 auto;
   border-radius: 50%;
   background-size: cover;
@@ -34,11 +34,16 @@
   margin: 0 auto;
   text-align: center;
   li {
-    display: inline-block;
+    float: left;
     height: 260px;
-    width: 260px;
-    padding: 20px;
+    width: calc(33.33% - 20px);
     box-sizing: border-box;
+    margin: 30px 10px 10px 10px;
+    background: rgba(245,242,246,0.8);
+    &:hover .artist-image-overlay {
+      opacity: 0.5;
+    }
+  }
     h3 {
       margin-bottom: 10px;
       font-size: 1.5rem;
@@ -48,22 +53,23 @@
       text-overflow: ellipsis;
       text-align: center;
       position: relative;
-      bottom: 195px;
-      background: rgba(170,70,234,0.8);
-      color: $white;
+      bottom: 283px;
+      background: #c9c8c9;
+      color: $black;
     }
     button {
       position: relative;
-      bottom: 287px;
-      left: 90px;
-      background: rgba(170,70,234,0.8);
-      color: $white;
+      bottom: 565px;
+      left: 100px;
+      background: rgba(209,209,209,0.8);
+      color: $primary-color;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
-      padding: 10px;
+      padding: 3px 8px;
       &:hover, &:focus {
         background: darken($primary-color, 20%);
+        color: $white;
         outline: 0;
         border: none;
         transform: scale(1.1);
@@ -72,4 +78,3 @@
       }
     }
   }
-}
