@@ -252,6 +252,18 @@ nav {
     .login-form a:hover, .signup-form a:hover {
       color: #7715b5; }
 
+.modal-container .modal-content {
+  padding: 10px;
+  box-sizing: border-box; }
+.modal-container h3 {
+  font-size: 2rem;
+  text-align: center; }
+.modal-container img {
+  height: 300px; }
+.modal-container .artist-info {
+  float: right;
+  width: 50%; }
+
 body {
   margin: 0;
   font-family: "Josefin Sans", Avenir, sans-serif;
