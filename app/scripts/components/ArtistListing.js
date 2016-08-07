@@ -49,10 +49,10 @@ const ArtistListing = React.createClass({
     }
     return (
       <li>
-        <div className="artist-image" style={styles}>
-          <h3>{this.props.name}</h3>
-          <button name="vote" id={this.props.id} onClick={this.vote}>{votes}</button>
-        </div>
+        <div className="artist-image" style={styles}></div>
+        <div className="artist-image-overlay" style={styles}></div>
+        <h3>{this.props.name}</h3>
+        <button name="vote" id={this.props.id} onClick={this.vote}>{votes}</button>
       </li>
     );
   }
