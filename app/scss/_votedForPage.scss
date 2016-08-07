@@ -1,43 +1,57 @@
 #voted-for-list {
-  width: 80%;
+  width: 98%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  .artist-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    opacity: 0.5;
+  }
+  .artist-image-overlay {
+    position: relative;
+    bottom: 244px;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-size: cover;
+  }
   li {
-    display: flex;
-    width: calc(100% / 3);
-    flex-direction: column;
-    justify-content: space-between;
+    width: 25%;
     height: 260px;
     padding: 20px;
     box-sizing: border-box;
     h3 {
       margin-bottom: 10px;
       font-size: 1.5rem;
+      font-weight: 200;
       padding: 8px 5px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       text-align: center;
       position: relative;
-      top: 54px;
-      background: rgba(170,70,234,0.8);
+      bottom: 264px;
+      background: darken($primary-color, 20%);
       color: $white;
     }
     button {
       position: relative;
-      bottom: 186px;
-      left: 82%;
+      bottom: 556px;
+      left: 248px;
       width: 30px;
       display: block;
-      background: rgba(170,70,234,0.8);
-      color: $white;
+      background: rgba(209,209,209,0.8);
+      color: $primary-color;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
       padding: 10px;
       &:hover, &:focus {
         background: darken($primary-color, 20%);
+        color: $white;
         outline: 0;
         border: none;
         transform: scale(1.1);

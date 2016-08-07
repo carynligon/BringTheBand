@@ -6,6 +6,7 @@ const VotedForBandListing = React.createClass({
     return (
       <li>
         <div className="artist-image" style={styles}></div>
+        <div className="artist-image-overlay" style={styles}></div>
         <h3>{this.props.name}</h3>
         <button name="vote" id={this.props.id}>{this.props.votes}</button>
       </li>

@@ -1,5 +1,5 @@
 .artist-image {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   opacity: 0.5;
@@ -30,13 +30,13 @@
 }
 
 #search-results-list {
-  width: 80%;
+  width: 98%;
   margin: 0 auto;
   text-align: center;
   li {
     float: left;
     height: 260px;
-    width: calc(33.33% - 20px);
+    width: calc(25% - 20px);
     box-sizing: border-box;
     margin: 30px 10px 10px 10px;
     background: rgba(245,242,246,0.8);
@@ -47,6 +47,7 @@
     h3 {
       margin-bottom: 10px;
       font-size: 1.5rem;
+      font-weight: 200;
       padding: 8px 5px;
       white-space: nowrap;
       overflow: hidden;
@@ -54,13 +55,13 @@
       text-align: center;
       position: relative;
       bottom: 283px;
-      background: #c9c8c9;
-      color: $black;
+      background: darken($primary-color, 20%);
+      color: $white;
     }
     button {
       position: relative;
       bottom: 565px;
-      left: 100px;
+      left: 143px;
       background: rgba(209,209,209,0.8);
       color: $primary-color;
       border: none;

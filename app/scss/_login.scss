@@ -6,9 +6,10 @@
   bottom: 0;
   background: linear-gradient(to right, darken($primary-color, 3%), lighten($primary-color, 17%));
 }
-.login-form {
+.login-form, .signup-form {
   background: none;
-  border: 1px solid $white;
+  border: 2px solid $white;
+  border-radius: 10px;
   width: 400px;
   margin: 10% auto;
   text-align: center;
@@ -16,17 +17,37 @@
   input {
     padding: 10px 5px;
     width: 300px;
-    border: none;
+    border: 2px solid $white;
+    border-radius: 5px;
     margin: 5px;
     background: $white;
-    color: $primary-color;
+    color: darken($primary-color, 20%);
     &:hover, &:focus {
-      border: 2px solid darken($primary-color, 5%);
+      border: 2px solid darken($primary-color, 20%);
+    }
+  }
+  input[type="submit"] {
+    &:hover {
+      background: darken($primary-color, 20%);
+      color: $white;
     }
   }
   h2 {
     font-size: 2.5rem;
+    font-weight: 200;
     margin-bottom: 20px;
     color: $white;
+  }
+  p {
+    color: $white;
+    font-weight: bolder;
+  }
+  a {
+    margin-left: 5px;
+    color: $white;
+    font-weight: bolder;
+    &:hover {
+      color: darken($primary-color, 20%);
+    }
   }
 }

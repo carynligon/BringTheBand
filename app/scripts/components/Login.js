@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {hashHistory, Link} from 'react-router';
 
 import store from '../store';
 
@@ -40,6 +40,7 @@ const Login = React.createClass({
           <input id="password" type="password" name="password" placeholder="password" ref="password"/>
           <p id="error-message"></p>
           <input type="submit" name="submit" value="submit"/>
+          <p>Need an account?<Link to="/signup">Sign up!</Link></p>
         </form>
       </div>
     );

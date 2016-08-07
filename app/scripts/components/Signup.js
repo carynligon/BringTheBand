@@ -37,14 +37,18 @@ const Signup = React.createClass({
   },
   render: function() {
     return (
-      <form className="signup-form" onSubmit={this.newUser}>
-        <input id="first-name" type="text" name="first-name" placeholder="first name" ref="firstName"/>
-        <input id="last-name" type="text" name="last-name" placeholder="last name" ref="lastName"/>
-        <input id="email" type="email" name="email" placeholder="email" ref="email"/>
-        <input id="username" type="text" name="username" placeholder="username" ref="username"/>
-        <input id="password" type="password" name="password" placeholder="password" ref="password"/>
-        <input type="submit" name="submit" value="submit"/>
-      </form>
+      <div className="login-wrapper">
+        <form className="signup-form" onSubmit={this.newUser}>
+          <h2>Sign up</h2>
+          <input id="first-name" type="text" name="first-name" placeholder="first name" ref="firstName"/>
+          <input id="last-name" type="text" name="last-name" placeholder="last name" ref="lastName"/>
+          <input id="email" type="email" name="email" placeholder="email" ref="email"/>
+          <input id="username" type="text" name="username" placeholder="username" ref="username"/>
+          <input id="password" type="password" name="password" placeholder="password" ref="password"/>
+          <input type="submit" name="submit" value="submit"/>
+          <p>Already have an account?<Link to="/login">Login!</Link></p>
+        </form>
+      </div>
     );
   }
 });
