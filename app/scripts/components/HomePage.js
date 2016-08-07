@@ -11,6 +11,7 @@ const HomePage = React.createClass({
         <Nav/>
         <Header/>
         <SearchResults/>
+        {this.props.children}
       </main>
     );
   }

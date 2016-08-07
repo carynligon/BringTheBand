@@ -1,0 +1,18 @@
+.modal-container {
+  .modal-content {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  img {
+    height: 300px;
+  }
+  .artist-info {
+    float: right;
+    width: 50%;
+  }
+}
