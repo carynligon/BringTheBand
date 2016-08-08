@@ -32,6 +32,7 @@ const VotedForPage = React.createClass({
         <ul id="voted-for-list">
           {bands}
         </ul>
+        {this.props.children}
       </section>
     );
   }

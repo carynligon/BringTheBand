@@ -33,10 +33,15 @@ const Modal = React.createClass({
     }
   },
   getInitialState: function() {
-    if (!store.searchCollection.get(this.props.params.artistId)) {
-      store.searchCollection.add({id: this.props.params.artistId})
+    let model;
+    if (location.hash.split('/')[1] === 'votedFor') {
+      model = store.votedForCollection.get(this.props.params.artistId)
+    } else {
+      if (!store.searchCollection.get(this.props.params.artistId)) {
+        model = store.searchCollection.add({id: this.props.params.artistId})
+      }
     }
-    return store.searchCollection.get(this.props.params.artistId).toJSON();
+    return model.toJSON();
   },
   // componentDidMount: function() {
   //   this.setState(store.searchCollection.get(this.props.params.artistId));
@@ -74,11 +79,11 @@ const Modal = React.createClass({
     <div className="modal-container" style={this.containerStyles}>
       <div className="modal-content" style={this.contentStyles}>
         <button id="close-modal" onClick={this.backHome}>back</button>
-        <h3>{this.state.get('name')}</h3>
-        <img src={this.state.get('image')}/>
+        <h3>{this.state.name}</h3>
+        <img src='#'/>
         <div className="artist-info">
-          <p id="popularity">Popularity: {this.state.get('popularity')}</p>
-          <p id="followers">{this.state.get('followers')} Followers</p>
+          <p id="popularity">Popularity: {this.state.popularity}</p>
+          <p id="followers">{this.state.followers} Followers</p>
           <p id="votes-modal">{votes} {voteLabel}</p>
           <button onClick={this.vote} id="vote-from-modal">{voteMessage}</button>
         </div>
