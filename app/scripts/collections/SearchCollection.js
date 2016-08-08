@@ -25,7 +25,8 @@ const SearchCollection = Backbone.Collection.extend({
             name: artist.name,
             src: artist.href,
             popularity: artist.popularity,
-            image: image
+            image: image,
+            followers: artist.followers.total
           });
         });
       }
