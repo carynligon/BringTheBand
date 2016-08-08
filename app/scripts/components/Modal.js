@@ -39,6 +39,8 @@ const Modal = React.createClass({
     } else {
       if (!store.searchCollection.get(this.props.params.artistId)) {
         model = store.searchCollection.add({id: this.props.params.artistId})
+      } else {
+        model = store.searchCollection.get(this.props.params.artistId);
       }
     }
     return model.toJSON();
@@ -67,6 +69,7 @@ const Modal = React.createClass({
     let voteLabel = 'votes';
     let voteMessage = 'Vote';
     let votes = 0;
+    let image = this.state.image;
     let votedFor = store.votedForCollection.get(this.props.params.artistId);
     if (votedFor) {
       if (votedFor.get('votes') === 1) {voteLabel = 'vote'}
@@ -80,7 +83,7 @@ const Modal = React.createClass({
       <div className="modal-content" style={this.contentStyles}>
         <button id="close-modal" onClick={this.backHome}>back</button>
         <h3>{this.state.name}</h3>
-        <img src='#'/>
+        <img src={this.state.image}/>
         <div className="artist-info">
           <p id="popularity">Popularity: {this.state.popularity}</p>
           <p id="followers">{this.state.followers} Followers</p>

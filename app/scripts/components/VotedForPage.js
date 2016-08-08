@@ -20,6 +20,7 @@ const VotedForPage = React.createClass({
   },
   getBands: function() {
     let bands = this.state.data.map((band, i) => {
+      console.log(band.image);
     return <AristListing key={i} name={band.name} id={band.id} image={band.image} voters={band.voters} votes={band.votes}/>
     });
     return bands;

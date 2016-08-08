@@ -23,12 +23,12 @@ const ArtistListing = React.createClass({
       store.votedForCollection.create({
         name: this.props.name,
         id: this.props.id,
-        image: this.props.image,
+        image: this.props.image[0].url,
         voters: {
           user: [localStorage.username]
         },
         popularity: this.props.popularity,
-        followers: this.props.followers
+        followers: this.props.followers.total
       });
     } else {
       let model = store.votedForCollection.get(this.props.id);
@@ -53,7 +53,11 @@ const ArtistListing = React.createClass({
     if (this.props.image.length === 0) {
       image = 'http://i607.photobucket.com/albums/tt160/SaikoSakura/Beatles%20Rock%20Band%20Icons/Drums-TBRB-Icon.png';
     } else {
-      image = this.props.image[0].url;
+      if (location.hash.split('?')[0] === '#/votedFor') {
+        image = this.props.image;
+      } else {
+        image = this.props.image[0].url;
+      }
     }
     let styles = {
       backgroundImage: 'url(' + image + ')'
