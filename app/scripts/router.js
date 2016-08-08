@@ -12,6 +12,7 @@ const router = (
     <Route path="/login" component={Login}/>
     <Route path="/signup" component={Signup}/>
     <Route path="/votedFor" component={VotedForPage}/>
+      <Route path="/votedFor/:artistId" component={Modal}/>
     <Route path="/" component={HomePage}>
       <Route path="/:artistId" component={Modal}/>
     </Route>

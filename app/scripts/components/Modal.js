@@ -5,31 +5,42 @@ import store from '../store';
 
 const Modal = React.createClass({
   backHome: function() {
-    hashHistory.push('/');
+    if (location.hash.split('/')[1] === 'votedFor') {
+      hashHistory.push('/votedFor');
+    } else {
+      hashHistory.push('/');
+    }
   },
   vote: function(e) {
-    if (!store.votedForCollection.get(this.props.id)) {
-      store.votedForCollection.create({
-        name: this.props.name,
-        id: this.props.id,
-        image: this.props.image,
-        voters: {
-          user: [localStorage.username]
-        }
-      });
-    } else {
-      let model = store.votedForCollection.get(this.props.id);
-      console.log(model);
+    if (location.hash.split('/')[1] === 'votedFor') {
+      let model = store.votedForCollection.get(this.props.params.artistId);
       model.newVote();
+    } else {
+      if (!store.votedForCollection.get(this.props.params.artistId)) {
+        store.votedForCollection.create({
+          name: this.state.get('name'),
+          id: this.props.get('id'),
+          image: this.props.get('image'),
+          voters: {
+            user: [localStorage.username]
+          }
+        });
+      } else {
+        let model = store.votedForCollection.get(this.props.params.artistId);
+        console.log(model);
+        model.newVote();
+      }
     }
   },
   getInitialState: function() {
-    return {}
+    if (!store.searchCollection.get(this.props.params.artistId)) {
+      store.searchCollection.add({id: this.props.params.artistId})
+    }
+    return store.searchCollection.get(this.props.params.artistId).toJSON();
   },
-  componentDidMount: function() {
-    let artist = store.searchCollection.get(this.props.params.artistId);
-    this.setState(artist.toJSON());
-  },
+  // componentDidMount: function() {
+  //   this.setState(store.searchCollection.get(this.props.params.artistId));
+  // },
   containerStyles: {
     position: 'fixed',
     top: 0,
@@ -47,10 +58,13 @@ const Modal = React.createClass({
     overflow: 'scroll'
   },
   render: function() {
+    console.log(this.state);
+    let voteLabel = 'votes';
     let voteMessage = 'Vote';
     let votes = 0;
     let votedFor = store.votedForCollection.get(this.props.params.artistId);
     if (votedFor) {
+      if (votedFor.get('votes') === 1) {voteLabel = 'vote'}
       if (votedFor.get('voters').user.indexOf(localStorage.username) !== -1) {
         voteMessage = 'You have voted';
         votes = votedFor.get('votes');
@@ -60,12 +74,12 @@ const Modal = React.createClass({
     <div className="modal-container" style={this.containerStyles}>
       <div className="modal-content" style={this.contentStyles}>
         <button id="close-modal" onClick={this.backHome}>back</button>
-        <h3>{this.state.name}</h3>
-        <img src={this.state.image}/>
+        <h3>{this.state.get('name')}</h3>
+        <img src={this.state.get('image')}/>
         <div className="artist-info">
-          <p id="popularity">Popularity: {this.state.popularity}</p>
-          <p id="followers">{this.state.followers} Followers</p>
-          <p id="votes-modal">{votes} Votes</p>
+          <p id="popularity">Popularity: {this.state.get('popularity')}</p>
+          <p id="followers">{this.state.get('followers')} Followers</p>
+          <p id="votes-modal">{votes} {voteLabel}</p>
           <button onClick={this.vote} id="vote-from-modal">{voteMessage}</button>
         </div>
       </div>

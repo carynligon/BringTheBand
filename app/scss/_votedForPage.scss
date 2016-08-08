@@ -1,8 +1,7 @@
 #voted-for-list {
   width: 98%;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+  text-align: center;
   .artist-image {
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,10 +18,15 @@
     background-size: cover;
   }
   li {
-    width: 25%;
+    float: left;
     height: 260px;
-    padding: 20px;
+    width: calc(25% - 20px);
     box-sizing: border-box;
+    margin: 30px 10px 10px 10px;
+    background: rgba(245,242,246,0.8);
+    &:hover .artist-image-overlay {
+      opacity: 0.5;
+    }
     h3 {
       margin-bottom: 10px;
       font-size: 1.5rem;
@@ -40,7 +44,7 @@
     button {
       position: relative;
       bottom: 556px;
-      left: 248px;
+      left: 84%;
       width: 30px;
       display: block;
       background: rgba(209,209,209,0.8);
@@ -58,6 +62,30 @@
         transition: background .7s ease-in-out;
         transition: transform .7s ease-in-out;
       }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  #voted-for-list {
+    li {
+      width: calc(33.33% - 20px);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #voted-for-list {
+    li {
+      width: calc(50% - 20px);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  #voted-for-list {
+    li {
+      width: calc(100% - 20px);
     }
   }
 }

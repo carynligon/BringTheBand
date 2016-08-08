@@ -2,7 +2,7 @@ import React from 'react';
 
 import store from '../store';
 import Nav from './Nav';
-import VotedForBandListing from './VotedForBandListing';
+import AristListing from './ArtistListing';
 
 const VotedForPage = React.createClass({
   getInitialState: function() {
@@ -20,7 +20,7 @@ const VotedForPage = React.createClass({
   },
   getBands: function() {
     let bands = this.state.data.map((band, i) => {
-    return <VotedForBandListing key={i} name={band.name} id={band.id} image={band.image} voters={band.voters} votes={band.votes}/>
+    return <AristListing key={i} name={band.name} id={band.id} image={band.image} voters={band.voters} votes={band.votes}/>
     });
     return bands;
   },

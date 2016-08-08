@@ -11,16 +11,12 @@ describe('VotedFor Model', function() {
   it('should respond to newVote method', () => {
     expect(votedForModelTest).to.respondTo('newVote');
   });
-  votedForCollectionTest.create({
-    name: 'test',
-    votes: 1,
-    voters: {
-      user: ['caryn']
-    },
-    image: 'holder'
-  });
-  votedForCollectionTest.fetch();
-  votedForCollectionTest.on('change add', () => {
-    console.log(votedForCollectionTest);
-  });
+  it('should cast a new vote'), () => {
+    expect(votedForCollectionTest.get('votes') === 0).to.be.true
+    votedForCollectionTest.newVote();
+    votedForCollectionTest.on('change add', () => {
+      expect(votedForCollectionTest.get('votes') === 1).to.be.true
+    });
+    votedForCollectionTest.fetch();
+  }
 });
