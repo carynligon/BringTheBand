@@ -257,12 +257,37 @@ nav {
   box-sizing: border-box; }
 .modal-container h3 {
   font-size: 2rem;
+  margin: 25px;
   text-align: center; }
+.modal-container #close-modal {
+  background: none;
+  border: none;
+  color: #aa46ea;
+  font-weight: bolder; }
 .modal-container img {
-  height: 300px; }
+  width: 300px; }
 .modal-container .artist-info {
+  background: #f6f0fa;
   float: right;
-  width: 50%; }
+  width: 54%;
+  padding: 10px 10px 20px 10px;
+  box-sizing: border-box; }
+  .modal-container .artist-info #popularity {
+    font-size: 1.3rem; }
+
+#vote-from-modal {
+  width: 300px;
+  background: #aa46ea;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  display: inherit;
+  margin-top: 160px auto 0 auto; }
+  #vote-from-modal:hover {
+    background: #7715b5;
+    transform: scale(1.05);
+    transition: transform .2s ease-in-out; }
 
 body {
   margin: 0;
