@@ -6,6 +6,7 @@ import Modal from './components/Modal';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import VotedForPage from './components/VotedForPage';
+import SearchResults from './components/SearchResults';
 
 const router = (
   <Router history={hashHistory}>
@@ -14,7 +15,9 @@ const router = (
     <Route path="/votedFor" component={VotedForPage}/>
       <Route path="/votedFor/:artistId" component={Modal}/>
     <Route path="/" component={HomePage}>
-      <Route path="/:artistId" component={Modal}/>
+      <Route path="/:artistName" component={SearchResults}>
+        <Route path="/modal/:artistId" component={Modal}/>
+      </Route>
     </Route>
   </Router>
 );

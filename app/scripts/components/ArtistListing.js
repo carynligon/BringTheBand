@@ -40,7 +40,7 @@ const ArtistListing = React.createClass({
     if (location.hash.split('?')[0] === '#/votedFor') {
       hashHistory.push(`/votedFor/${this.props.id}`);
     } else {
-      hashHistory.push(`/${this.props.id}`);
+      hashHistory.push(`/modal/${this.props.id}`);
     }
   },
   render: function() {

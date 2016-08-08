@@ -10,7 +10,6 @@ const HomePage = React.createClass({
       <main>
         <Nav/>
         <Header/>
-        <SearchResults/>
         {this.props.children}
       </main>
     );

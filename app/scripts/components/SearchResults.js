@@ -31,6 +31,7 @@ const SearchResults = React.createClass({
         <ul id="search-results-list">
           {artistArr}
         </ul>
+        {this.props.children}
       </section>
     );
   }
