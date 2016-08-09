@@ -5,6 +5,8 @@ import {hashHistory, Link} from 'react-router';
 import store from '../store';
 import settings from '../settings';
 
+import Nav from './Nav';
+
 const Login = React.createClass({
   loginUser: function(e) {
     localStorage.clear();
@@ -37,6 +39,7 @@ const Login = React.createClass({
   render: function() {
     return (
       <div className="login-wrapper">
+        <Nav/>
         <form className="login-form" onSubmit={this.loginUser}>
           <h2>Login</h2>
           <input id="username" type="text" name="username" placeholder="username" ref="username"/>

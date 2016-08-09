@@ -46,6 +46,11 @@ const Nav = React.createClass({
           <input type="button" id="logout-btn" value="Logout" onClick={this.logout}/>
         </div>
       );
+    } else if (location.hash.split('?')[0].split('/')[1] === 'login' || location.hash.split('?')[0].split('/')[1] === 'signup') {
+      links = (
+        <div className="changing-links">
+        </div>
+      );
     } else {
       links = (
         <div className="changing-links">

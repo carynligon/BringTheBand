@@ -5,6 +5,8 @@ import {hashHistory, Link} from 'react-router';
 import store from '../store';
 import settings from '../settings';
 
+import Nav from './Nav';
+
 
 const Signup = React.createClass({
   newUser: function(e) {
@@ -41,6 +43,7 @@ const Signup = React.createClass({
   render: function() {
     return (
       <div className="login-wrapper">
+        <Nav/>
         <form className="signup-form" onSubmit={this.newUser}>
           <h2>Sign up</h2>
           <input id="first-name" type="text" name="first-name" placeholder="first name" ref="firstName"/>
