@@ -305,7 +305,8 @@ nav {
   z-index: 7; }
   .modal-container .modal-content {
     padding: 10px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    text-align: center; }
   .modal-container h3 {
     font-size: 2rem;
     margin: 25px;
@@ -324,7 +325,8 @@ nav {
     float: right;
     width: 54%;
     padding: 10px 10px 20px 10px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    text-align: left; }
     .modal-container .artist-info #popularity {
       font-size: 1.3rem; }
 
@@ -355,9 +357,14 @@ ul {
 
 input:hover, input:focus {
   cursor: pointer;
-  outline: none; }
+  outline: 2px solid #fff; }
+
+a:focus {
+  outline: 2px solid #fff; }
 
 button:hover {
   cursor: pointer; }
+button:focus {
+  outline: 2px solid #aa46ea; }
 
 /*# sourceMappingURL=main.css.map */

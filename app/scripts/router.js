@@ -12,8 +12,9 @@ const router = (
   <Router history={hashHistory}>
     <Route path="/login" component={Login}/>
     <Route path="/signup" component={Signup}/>
-    <Route path="/votedFor" component={VotedForPage}/>
+    <Route path="/votedFor" component={VotedForPage}>
       <Route path="/votedFor/:artistId" component={Modal}/>
+    </Route>
     <Route path="/" component={HomePage}>
       <Route path="/:artistName" component={SearchResults}>
         <Route path="/:artistName/:artistId" component={Modal}/>
