@@ -5,10 +5,10 @@ import Header from './Header';
 import SearchResults from './SearchResults';
 
 const images = [
-  '../../assets/images/hero1-min.jpeg',
-  '../../assets/images/hero2-min.jpeg',
-  '../../assets/images/hero3-min.jpeg',
-  '../../assets/images/hero4-min.jpeg'
+  'assets/images/hero1-min.jpeg',
+  'assets/images/hero2-min.jpeg',
+  'assets/images/hero3-min.jpeg',
+  'assets/images/hero4-min.jpeg'
 ];
 
 const HomePage = React.createClass({
