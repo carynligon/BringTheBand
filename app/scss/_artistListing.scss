@@ -40,8 +40,11 @@
     box-sizing: border-box;
     margin: 30px 10px 10px 10px;
     background: rgba(245,242,246,0.8);
-    &:hover .artist-image-overlay {
-      opacity: 0.5;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover .artist-image {
+      opacity: 0.8;
     }
   }
     h3 {
@@ -76,6 +79,7 @@
         transform: scale(1.1);
         transition: background .7s ease-in-out;
         transition: transform .7s ease-in-out;
+        cursor: pointer;
       }
     }
   }

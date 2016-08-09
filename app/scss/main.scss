@@ -25,6 +25,11 @@ input {
   &:hover, &:focus {
     cursor: pointer;
     outline: none;
-    border: 2px solid red;
+  }
+}
+
+button {
+  &:hover {
+    cursor: pointer;
   }
 }

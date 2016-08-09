@@ -13,6 +13,9 @@
     border: none;
     color: $primary-color;
     font-weight: bolder;
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   img {
@@ -39,7 +42,7 @@
   border: none;
   border-radius: 5px;
   display: inherit;
-  margin-top: 160px auto 0 auto;
+  margin: 0 auto;
   &:hover {
     background: darken($primary-color, 20%);
     transform: scale(1.05);

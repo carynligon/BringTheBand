@@ -3,9 +3,11 @@ import React from 'react';
 import {hashHistory, Link} from 'react-router';
 
 import store from '../store';
+import settings from '../settings';
 
 const Login = React.createClass({
   loginUser: function(e) {
+    localStorage.clear();
     e.preventDefault();
     let username = this.refs.username.value;
     let password = this.refs.password.value;
@@ -28,6 +30,7 @@ const Login = React.createClass({
         document.getElementById('password').style.color = '#f32424';
         document.getElementById('error-message').textContent = 'Invalid username or password';
         console.log('error: ' + response);
+        localStorage.setItem('authtoken', settings.anonymousToken);
       }
     });
   },

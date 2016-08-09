@@ -16,7 +16,7 @@ const router = (
       <Route path="/votedFor/:artistId" component={Modal}/>
     <Route path="/" component={HomePage}>
       <Route path="/:artistName" component={SearchResults}>
-        <Route path="/modal/:artistId" component={Modal}/>
+        <Route path="/:artistName/:artistId" component={Modal}/>
       </Route>
     </Route>
   </Router>

@@ -3,10 +3,12 @@ import session from '../models/Session';
 import {hashHistory, Link} from 'react-router';
 
 import store from '../store';
+import settings from '../settings';
 
 
 const Signup = React.createClass({
   newUser: function(e) {
+    localStorage.clear();
     e.preventDefault();
     let firstName = this.refs.firstName.value;
     let lastName = this.refs.lastName.value;
@@ -32,6 +34,7 @@ const Signup = React.createClass({
       },
       error: function(response) {
         console.log('error: ' + response);
+        localStorage.setItem('authtoken', settings.anonymousToken);
       }
     });
   },

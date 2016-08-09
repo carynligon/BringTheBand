@@ -16,3 +16,7 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
 });
 
 ReactDOM.render(router, document.getElementById('container'));
+
+if (!localStorage.getItem('authtoken')) {
+  localStorage.setItem('authtoken', settings.anonymousToken);
+}

@@ -8,7 +8,8 @@ const Modal = React.createClass({
     if (location.hash.split('/')[1] === 'votedFor') {
       hashHistory.push('/votedFor');
     } else {
-      hashHistory.push('/');
+      let searchTerm = location.hash.split('?')[0].split('/')[1]
+      hashHistory.push(`/${searchTerm}`);
     }
   },
   vote: function(e) {
@@ -65,7 +66,6 @@ const Modal = React.createClass({
     overflow: 'scroll'
   },
   render: function() {
-    console.log(this.state);
     let voteLabel = 'votes';
     let voteMessage = 'Vote';
     let votes = 0;

@@ -2,11 +2,20 @@ import React from 'react';
 import {Link} from 'react-router';
 
 import store from '../store';
+import settings from '../settings';
 
 const Nav = React.createClass({
   getInitialState: function() {
+    let loggedIn;
+    if (localStorage.getItem('authtoken') === settings.anonymousToken) {
+      loggedIn = false;
+    } else if (!localStorage.getItem('authtoken')) {
+      loggedIn = false;
+    } else {
+      loggedIn = true;
+    }
     return {
-      loggedIn: localStorage.authtoken ? true : false
+      loggedIn: loggedIn
     }
   },
   logout: function() {
@@ -45,7 +54,6 @@ const Nav = React.createClass({
         </div>
       );
     }
-    console.log(this.state);
     return (
       <nav>
         <Link to='/'><i className="fa fa-home home-icon" aria-hidden="true"/>Home</Link>
