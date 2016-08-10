@@ -20,7 +20,7 @@ const ArtistListing = React.createClass({
     store.votedForCollection.off('change add', this.listener);
   },
   vote: function(e) {
-    if (localStorage.getItem('authtoken') === settings.anonymousToken) {
+    if (localStorage.getItem('username') === 'Anonymous') {
       hashHistory.push('/login');
     } else {
       if (!store.votedForCollection.get(this.props.id)) {
@@ -29,7 +29,7 @@ const ArtistListing = React.createClass({
           id: this.props.id,
           image: this.props.image[0].url,
           voters: {
-            user: [sessStorage.getItem('username')]
+            user: [localStorage.getItem('username')]
           },
           popularity: this.props.popularity,
           followers: this.props.followers.total
@@ -55,7 +55,7 @@ const ArtistListing = React.createClass({
     if (store.votedForCollection.get(this.props.id)) {
       let votedFor = store.votedForCollection.get(this.props.id);
       votes = votedFor.get('votes');
-      if (votedFor.get('voters').user.indexOf(sessionStorage.getItem('username')) !== -1) {
+      if (votedFor.get('voters').user.indexOf(localStorage.getItem('username')) !== -1) {
         check = (<i className="fa fa-check check-icon" aria-hidden="true"></i>);
       }
       } else {votes = 0;}

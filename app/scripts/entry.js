@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router} from 'react-router';
 
 import settings from './settings';
+import store from './store';
 import router from './router';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
@@ -18,5 +19,13 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
 ReactDOM.render(router, document.getElementById('container'));
 
 if (!localStorage.getItem('authtoken')) {
-  localStorage.setItem('authtoken', settings.anonymousToken);
+  store.session.save({
+    username: 'Anonymous',
+    password: '1234'
+  }, {
+    success: function(data) {
+      localStorage.setItem('authtoken', data.get('authtoken'));
+      localStorage.setItem('username', 'Anonymous');
+    }
+  });
 }

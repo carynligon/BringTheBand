@@ -13,13 +13,16 @@ const Modal = React.createClass({
     }
   },
   vote: function(e) {
+    if (localStorage.getItem('username') === 'Anonymous') {
+      hashHistory.push('/login');
+    }
     if (location.hash.split('/')[1] === 'votedFor') {
       let model = store.votedForCollection.get(this.props.params.artistId);
       model.newVote();
     } else {
       if (!store.votedForCollection.get(this.props.params.artistId)) {
         store.votedForCollection.create({
-          name: this.state.get('name'),
+          name: this.props.get('name'),
           id: this.props.get('id'),
           image: this.props.get('image'),
           voters: {
@@ -79,7 +82,7 @@ const Modal = React.createClass({
       }
     }
     return(
-    <div className="modal-container" style={this.containerStyles}>
+    <div className="modal-container" style={this.containerStyles} onKeyPress={this.escape}>
       <div className="modal-content" style={this.contentStyles}>
         <button id="close-modal" onClick={this.backHome}>back</button>
         <h3>{this.state.name}</h3>

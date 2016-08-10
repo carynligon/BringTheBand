@@ -7,7 +7,7 @@ import settings from '../settings';
 const Nav = React.createClass({
   getInitialState: function() {
     let loggedIn;
-    if (localStorage.getItem('authtoken') === settings.anonymousToken) {
+    if (localStorage.getItem('username') === 'Anonymous') {
       loggedIn = false;
     } else if (!localStorage.getItem('authtoken')) {
       loggedIn = false;
