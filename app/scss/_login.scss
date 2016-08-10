@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  height: 130vh;
   background: linear-gradient(to right, darken($primary-color, 3%), lighten($primary-color, 17%));
 }
 .login-form, .signup-form {
@@ -14,6 +15,14 @@
   margin: 10% auto;
   text-align: center;
   padding-bottom: 30px;
+  label {
+    display: block;
+    margin: 15px 45px 0px 45px;
+    text-align: left;
+    color: $white;
+    font-weight: bolder;
+    letter-spacing: 1px;
+  }
   input {
     padding: 10px 5px;
     width: 300px;
@@ -49,5 +58,11 @@
     &:hover {
       color: darken($primary-color, 20%);
     }
+  }
+}
+
+.signup-form {
+  input[type="submit"] {
+    margin-top: 30px;
   }
 }

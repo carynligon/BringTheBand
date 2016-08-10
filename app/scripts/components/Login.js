@@ -42,7 +42,9 @@ const Login = React.createClass({
         <Nav/>
         <form className="login-form" onSubmit={this.loginUser}>
           <h2>Login</h2>
+          <label htmlFor="username">username</label>
           <input id="username" type="text" name="username" placeholder="username" ref="username"/>
+          <label htmlFor="password">password</label>
           <input id="password" type="password" name="password" placeholder="password" ref="password"/>
           <p id="error-message"></p>
           <input type="submit" name="submit" value="submit"/>

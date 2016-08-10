@@ -263,6 +263,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
+  height: 130vh;
   background: linear-gradient(to right, #a438e8, #ce94f3); }
 
 .login-form, .signup-form {
@@ -273,6 +274,13 @@ nav {
   margin: 10% auto;
   text-align: center;
   padding-bottom: 30px; }
+  .login-form label, .signup-form label {
+    display: block;
+    margin: 15px 45px 0px 45px;
+    text-align: left;
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: 1px; }
   .login-form input, .signup-form input {
     padding: 10px 5px;
     width: 300px;
@@ -300,6 +308,9 @@ nav {
     font-weight: bolder; }
     .login-form a:hover, .signup-form a:hover {
       color: #7715b5; }
+
+.signup-form input[type="submit"] {
+  margin-top: 30px; }
 
 .modal-container {
   z-index: 7; }

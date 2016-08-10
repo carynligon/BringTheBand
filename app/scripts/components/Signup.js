@@ -46,10 +46,15 @@ const Signup = React.createClass({
         <Nav/>
         <form className="signup-form" onSubmit={this.newUser}>
           <h2>Sign up</h2>
+          <label htmlFor="first-name">first name</label>
           <input id="first-name" type="text" name="first-name" placeholder="first name" ref="firstName"/>
+          <label htmlFor="last-name">last name</label>
           <input id="last-name" type="text" name="last-name" placeholder="last name" ref="lastName"/>
+          <label htmlFor="email">email</label>
           <input id="email" type="email" name="email" placeholder="email" ref="email"/>
+          <label htmlFor="username">username</label>
           <input id="username" type="text" name="username" placeholder="username" ref="username"/>
+          <label htmlFor="password">password</label>
           <input id="password" type="password" name="password" placeholder="password" ref="password"/>
           <input type="submit" name="submit" value="submit"/>
           <p>Already have an account?<Link to="/login">Login!</Link></p>
